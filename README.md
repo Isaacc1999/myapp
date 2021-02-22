@@ -11,4 +11,4 @@ Within these labs you will explore Azure Devops and learn the basics of the most
 -	Add additional tests and features to the app provided.
 
 ## Getting Started
-Before you can start building, you need an AKS cluster, an ACR and a Devops project. Follow the steps in the included guide '''Azure_Devops_Labs.docx'''.
+Before you can start building, you need an AKS cluster, an ACR and a Devops project. Follow the steps in the included guide `Azure_Devops_Labs.docx`.
