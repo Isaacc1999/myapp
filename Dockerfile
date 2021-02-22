@@ -1,0 +1,23 @@
+# From https://docs.microsoft.com/en-us/azure/devops/pipelines/process/container-phases?view=azure-devops#linux-based-containers
+# Images based on Alpine Linux, don't satisfy minimum requirements for Azure Devops as container jobs.
+FROM python:3.7
+
+RUN mkdir /app
+
+WORKDIR /app 
+
+COPY requirements.txt ./
+RUN pip install -r requirements.txt
+
+COPY app.py ./
+RUN chmod 644 app.py
+
+COPY test_app.py ./
+RUN chmod 644 test_app.py
+
+EXPOSE 5000
+
+LABEL maintainer = "Angel Sevilla Camins"
+
+# Linux based container should not define an ENTRYPOINT
+CMD ["python", "app.py"]
