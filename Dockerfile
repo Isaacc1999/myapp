@@ -18,4 +18,4 @@ EXPOSE 5000
 LABEL maintainer = "Angel Sevilla Camins"
 
 # Linux based container should not define an ENTRYPOINT
-CMD ["python", "app/app.py"]
+CMD ["python", "app.py"]
