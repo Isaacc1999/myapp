@@ -9,15 +9,13 @@ WORKDIR /app
 COPY requirements.txt ./
 RUN pip install -r requirements.txt
 
-COPY app.py ./
-RUN chmod 644 app.py
+COPY app/ ./
 
-COPY test_app.py ./
-RUN chmod 644 test_app.py
+COPY tests/ ./
 
 EXPOSE 5000
 
 LABEL maintainer = "Angel Sevilla Camins"
 
 # Linux based container should not define an ENTRYPOINT
-CMD ["python", "app.py"]
+CMD ["python", "app/app.py"]

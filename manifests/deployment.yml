@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: USER_NAME 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: USER_NAME
+  template:
+    metadata:
+      labels:
+        app: USER_NAME 
+    spec:
+      containers:
+        - name: USER_NAME 
+          image: ACR_NAME.azurecr.io/USER_NAME
+          ports:
+          - containerPort: 5000
