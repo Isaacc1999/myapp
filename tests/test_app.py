@@ -1,9 +1,9 @@
 import pytest
-from app import app
+from app.app import app  # Correct import path
 
 @pytest.fixture
 def client():
-    app.config['TESTING'] = True
+    app.testing = True  # Flask uses .testing, not .config['TESTING']
     with app.test_client() as client:
         yield client
 
